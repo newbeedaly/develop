@@ -1,0 +1,25 @@
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <parent>
+        <artifactId>dubbo-order</artifactId>
+        <groupId>cn.newbeedaly</groupId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dubbo-order-domain</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.newbeedaly</groupId>
+            <artifactId>dubbo-order-rpc</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.newbeedaly</groupId>
+            <artifactId>dubbo-order-adaptor</artifactId>
+            <version>${revision}</version>
+        </dependency>
+    </dependencies>
+
+</project>

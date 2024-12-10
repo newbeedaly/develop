@@ -1,0 +1,50 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /
+# 数据源
+spring:
+  application:
+    name: order
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/order?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  #允许存在多个Feign调用相同Service的接口
+  main:
+    allow-bean-definition-overriding: true
+# out sql
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # mybatis plus
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*/*.xml
+  type-aliases-package: cn.newbeedaly.order.*.adaptor.*.entity
+
+# FeignClient日志
+logging:
+  level:
+    cn.newbeedaly.order: debug
+# eurekaServer配置
+eureka:
+  client:
+    registerWithEureka: true # 是否需要被其他服务调用
+    fetchRegistry: true # 是否从eureka-server中，获取注册信息，集群时需要同步其他的eureka-server数据
+    service-url:
+      defaultZone: http://newbeedaly:123456@127.0.0.1:8761/eureka/
+  instance:
+    # 将自己的IP注册到eureka
+    ip-address: true
+    metadata-map:
+      # 自定义元数据
+      mydata: newbeedaly
+#feign: #开启熔断
+feign:
+  httpclient:
+    enabled: true
+ribbon:
+  eureka:
+    enabled: true

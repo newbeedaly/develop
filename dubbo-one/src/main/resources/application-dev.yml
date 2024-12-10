@@ -1,0 +1,24 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: one
+dubbo:
+  application:
+    name: ${spring.application.name}
+  registry:
+    address: nacos://127.0.0.1:8848
+    parameters:
+      namespace: public
+  protocol:
+    name: dubbo
+    port: 9000
+  consumer:
+    #使用延迟加载方式，防止服务端不起或者合并部署时报服务状态异常
+    lazy: true
+    check: false
+    validation: "true"
+    # JSR303校验
+    # 由于消费端引入了服务端的api 所以在消费端开启校验时只需在consumer.xml 中开启验证即可 validation=“true”
+    #provider:
+    #validation: "false"

@@ -1,0 +1,38 @@
+server:
+  port: 8000
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: one
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/one?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  mapper-locations: 'classpath:mapper/*/*.xml'
+  type-aliases-package: cn.newbeedaly.one.*.adaptor.*.entity
+logging:
+  level:
+    cn.newbeedaly.pay: debug
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: 'http://newbeedaly:123456@127.0.0.1:8761/eureka/'
+  instance:
+    ip-address: true
+    metadata-map:
+      mydata: newbeedaly
+feign:
+  httpclient:
+    enabled: true
+ribbon:
+  eureka:
+    enabled: true
