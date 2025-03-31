@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface OrderClient {
 
     @GetMapping(value = "/{orderId}")
-    String getPayInfoByOrderId(@PathVariable("orderId") String orderId);
+    String getOrder(@PathVariable("orderId") String orderId);
 
+    @GetMapping("/pay/{key}")
+    String getPayByOrderId(@PathVariable("key") String orderId);
 }

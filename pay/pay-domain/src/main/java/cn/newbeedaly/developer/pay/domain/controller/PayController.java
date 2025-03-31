@@ -1,7 +1,6 @@
 package cn.newbeedaly.developer.pay.domain.controller;
 
 import cn.newbeedaly.developer.pay.api.client.PayClient;
-import cn.newbeedaly.developer.pay.api.vo.req.PaymentReqVO;
 import cn.newbeedaly.developer.pay.api.vo.res.PaymentResVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,9 +23,4 @@ public class PayController extends PayBaseController implements PayClient {
         return vo;
     }
 
-    @Override
-    public Boolean pay(PaymentReqVO pay) {
-        logger.info("支付中心：发起支付, 商户:{}, 订单号: {}, 订单支付中", pay.getMerchantId(), pay.getOrderId());
-        return Boolean.TRUE;
-    }
 }

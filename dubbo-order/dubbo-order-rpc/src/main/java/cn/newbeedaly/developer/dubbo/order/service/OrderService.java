@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
  */
 public interface OrderService {
 
-    String getOrderPayByOrderId(@NotNull OrderQueryReqDTO dto);
+    String getPayByOrderId(@NotNull OrderQueryReqDTO dto);
 
     String getPayIdByOrderId(@NotNull String orderId);
 

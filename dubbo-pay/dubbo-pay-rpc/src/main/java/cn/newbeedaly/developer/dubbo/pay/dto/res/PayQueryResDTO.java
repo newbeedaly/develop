@@ -1,6 +1,6 @@
 package cn.newbeedaly.developer.dubbo.pay.dto.res;
 
-import cn.newbeedaly.developer.dubbo.pay.dto.req.BaseDTO;
+import cn.newbeedaly.developer.dubbo.pay.dto.BaseDTO;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

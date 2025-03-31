@@ -17,6 +17,7 @@
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
+        <!-- biz -->
         <dependency>
             <groupId>cn.newbeedaly</groupId>
             <artifactId>dubbo-order-domain</artifactId>

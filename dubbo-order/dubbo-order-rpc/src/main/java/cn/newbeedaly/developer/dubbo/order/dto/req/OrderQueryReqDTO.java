@@ -1,5 +1,6 @@
 package cn.newbeedaly.developer.dubbo.order.dto.req;
 
+import cn.newbeedaly.developer.dubbo.order.dto.BaseDTO;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

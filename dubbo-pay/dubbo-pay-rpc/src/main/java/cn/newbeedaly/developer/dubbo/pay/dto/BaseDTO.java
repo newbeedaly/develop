@@ -1,4 +1,4 @@
-package cn.newbeedaly.developer.dubbo.order.dto.req;
+package cn.newbeedaly.developer.dubbo.pay.dto;
 
 import java.io.Serializable;
 
